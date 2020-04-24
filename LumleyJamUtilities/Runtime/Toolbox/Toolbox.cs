@@ -29,7 +29,7 @@ namespace Lumley.Toolbox
             
             if (_instance != null && _instance != this)
             {
-                Destroy(this);
+                Destroy(gameObject);
                 return;
             }
 
