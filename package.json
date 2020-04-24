@@ -1,8 +1,8 @@
 {
   "name": "lumley.unitygamejamutilities",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "Unity Gamejam Utilities",
-  "description": "Tiny set of utilities the help get started with gamejams",
+  "description": "Author: Sergio R. Lumley\nTiny set of utilities the help get started with gamejams",
   "unity": "2019.3",
   "unityRelease": "3f1",
  "keywords": [
@@ -14,5 +14,15 @@
     "name": "Sergio R. Lumley",
     "email": "lumley256+github@gmail.com",
     "url": "https://github.com/lumley"
-  }
+  },
+  "files": [
+        "/LICENSE.md",
+        "/LICENSE.meta",
+        "/README.md",
+        "/README.md.meta",
+        "/package.json",
+        "/package.json.meta",
+        "/LumleyJamUtilities",
+        "/LumleyJamUtilities.meta"
+    ]
 }

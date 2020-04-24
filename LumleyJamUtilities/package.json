@@ -1,0 +1,18 @@
+{
+  "name": "lumley.unitygamejamutilities-src",
+  "version": "0.1.1",
+  "displayName": "Unity Gamejam Utilities (Source Code)",
+  "description": "Tiny set of utilities the help get started with gamejams",
+  "unity": "2019.3",
+  "unityRelease": "3f1",
+ "keywords": [
+    "gamejam",
+    "utilities",
+    "code"
+  ],
+  "author": {
+    "name": "Sergio R. Lumley",
+    "email": "lumley256+github@gmail.com",
+    "url": "https://github.com/lumley"
+  }
+}
