@@ -8,4 +8,21 @@ This is what you should expect from it.
 
 The project also serves as a test of how to bundle a Unity package to be imported via the Package Manager.
 
-I followed [the documentation found here](https://nagachiang.github.io/tutorial-working-with-custom-package-in-unity-2019-2/).
+## Importing via GIt URL
+
+Available starting from Unity 2018.3.
+
+Just add this line to the `Packages/manifest.json` file of your Unity Project:
+
+```json
+"dependencies": {
+    "lumley.unitygamejamutilities": "https://github.com/lumley/unity-gamejam-utilities.git",
+}
+```
+
+If you want to use a specific [release](https://github.com/lumley/unity-gamejam-utilities/releases) in your code, just add `#release` at the end, like so:
+```json
+"dependencies": {
+    "lumley.unitygamejamutilities": "https://github.com/lumley/unity-gamejam-utilities.git#0.1.3",
+}
+```
