@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+#if UNITY_EDITOR
+using System.Linq;
+#endif
+
 namespace Lumley.Localization
 {
     [CreateAssetMenu(fileName = nameof(LocalizationFile), menuName = "ScriptableObjects/"+nameof(LocalizationFile), order = 0)]
@@ -130,9 +134,35 @@ namespace Lumley.Localization
 
             return didChange;
         }
-        
+
+        /// <summary>
+        /// So we don't need to initialize or hit the cache, we can work with the raw data
+        /// </summary>
+        /// <returns>Serialized data</returns>
+        internal KeyToValue[] GetKeyToValue() => _values;
+
+        internal void UpdateValue(LocalizedText localizedTextAsset, string newTranslation)
+        {
+#if UNITY_EDITOR
+            for (var index = 0; index < _values.Length; index++) {
+                if (_values[index].Key == localizedTextAsset) {
+                    _values[index].Value = newTranslation;
+                    UnityEditor.EditorUtility.SetDirty(this);
+                    return;
+                }
+            }
+            
+            // Not Found
+            var keyToValues = _values.Where(x => x.Key != null).ToList();
+            keyToValues.Add(new KeyToValue {Key = localizedTextAsset, Value = newTranslation});
+            keyToValues.Sort((a,b) => string.CompareOrdinal(a.Key.name, b.Key.name));
+            _values = keyToValues.ToArray();
+            UnityEditor.EditorUtility.SetDirty(this);
+#endif
+        }
+
         [Serializable]
-        private struct KeyToValue
+        internal struct KeyToValue
         {
             public LocalizedText Key;
             public string Value;
