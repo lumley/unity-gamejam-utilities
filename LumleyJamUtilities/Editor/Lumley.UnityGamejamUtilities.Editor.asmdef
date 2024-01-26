@@ -1,0 +1,18 @@
+{
+    "name": "Lumley.UnityGamejamUtilities.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b3dc32a264c7fd843ad31a1e4ba9fc23"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

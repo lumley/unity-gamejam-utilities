@@ -70,7 +70,11 @@ namespace Lumley.Localization
                 for (var j = 0; j < localizationFile.CultureNames.Length; j++)
                 {
                     var fileCultureName = localizationFile.CultureNames[j];
+#if UNITY_EDITOR
+                    _languageToFileMap[fileCultureName] = Instantiate(localizationFile);
+#else
                     _languageToFileMap[fileCultureName] = localizationFile;
+#endif                    
                 }
             }
         }
